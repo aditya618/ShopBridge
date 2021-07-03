@@ -7,16 +7,19 @@
   z-index: 100;
 }
 
-// .grey-band {
-//   height: 50px;
-//   // background-color: #a17fe0;
-//   background-color: lightgrey;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-//   padding: 20px;
+.grey-band {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
 
-//   .search {
-//     height: 30px;
-//   }
-// }
+  .search {
+    height: 30px;
+    outline: none;
+    border: 1px solid #a17fe0;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20%;
+  }
+}

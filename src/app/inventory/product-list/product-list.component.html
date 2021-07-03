@@ -3,9 +3,9 @@
 <app-carousel></app-carousel>
 <div class="container py-4">
   <h3 class="text-center">Products</h3>
-  <!-- <div class="grey-band">
-    <input class="search" type="search" >
-  </div> -->
+  <div class="grey-band">
+    <input class="search" (keyup)="onSearch($event)" placeholder="Search for product name" type="text" >
+  </div>
   <div *ngIf="products" class="row mt-4">
     <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of products">
       <app-product-card (click)="onCardClick(product)"  [product]="product"></app-product-card>

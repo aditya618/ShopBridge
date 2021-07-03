@@ -10,6 +10,7 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class ProductListComponent implements OnInit {
   public products: Product[] = [];
+  public productsDup: Product[] = [];
   public spinner: boolean = false;
   constructor(private apiService: InventoryApiService, private router: Router) { }
 
@@ -19,6 +20,7 @@ export class ProductListComponent implements OnInit {
       .subscribe((res: Product[]) => {
         console.log(res);
         this.products = res;
+        this.productsDup = res;
         this.spinner = false;
       },
       err => console.log(err));
@@ -27,6 +29,13 @@ export class ProductListComponent implements OnInit {
   public onCardClick(product: Product) {
     this.apiService.setSelectedProduct(product);
     this.router.navigate(['/details']);
+  }
+
+  public onSearch(event){
+    const query = event.target.value.toLowerCase();
+    const p = this.productsDup;
+    const filteredData = p.filter(el => el.title.toLowerCase().indexOf(query) > -1);
+    this.products = filteredData;
   }
 
 }
