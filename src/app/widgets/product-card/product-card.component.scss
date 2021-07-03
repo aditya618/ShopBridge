@@ -1,0 +1,24 @@
+.card-float {
+  box-shadow: 1px 1px 2px 1px grey;
+  cursor: pointer;
+}
+
+.card-float:hover {
+  box-shadow: 1px 1px 8px 2px grey;
+}
+
+.card {
+  width: 100% !important;
+  height: 20em !important;
+}
+
+.card-img-top {
+  height: 14em !important;
+  margin: 0 auto !important;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

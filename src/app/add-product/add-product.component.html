@@ -1,0 +1,51 @@
+<div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+  {{action === 'add' ? 'Successfully Added!' : 'Successfully Edited!'}} <a routerLink='/' class="alert-link">Go to Home Page</a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+  Some Error Occurred!!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="spinner" class="spinner spinner-border text-primary"></div>
+<div class="container mt-5">
+  <h2 class="text-center">{{action === 'add' ? 'Add' : 'Edit'}} Product</h2>
+  <form #addForm=ngForm (ngSubmit)="onSubmit(addForm.form.value)" novalidate>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" placeholder="Give your product a title!!" required name="title" #title="ngModel" [(ngModel)]="Product.title" [class.is-invalid]="title.invalid && title.touched" class="form-control is-invalid">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="text" placeholder="Give product description.." required name="description" #description="ngModel" [(ngModel)]="Product.description" [class.is-invalid]="description.invalid && description.touched" class="form-control is-invalid">
+          </textarea>
+    </div>
+    <div class="d-flex">
+      <div class="form-group">
+          <label for="tags">Tags</label>
+          <input type="text" required placeholder="comma separated words, Eg.:bag,dress,electronic" name="tags" #tags="ngModel" [(ngModel)]="Product.tags" [class.is-invalid]="tags.invalid && tags.touched" class="form-control is-invalid">
+      </div>
+      <div class="form-group ml-5">
+          <label for="price">Price</label>
+          <input type="number" min="0" required placeholder="Enter price" name="price" #price="ngModel" [(ngModel)]="Product.price" [class.is-invalid]="price.invalid && price.touched" class="form-control is-invalid">
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="form-group" style="width: 30%">
+        <label>Upload Image</label>
+        <input (change)="onFileUpload($event)" type="file" accept="image/*">
+        <p class="mt-1" style="font-size: 11px;">Please use images below 20kb size</p>
+      </div>
+      <div *ngIf="imgUrl">
+        <img style="width: 100px;" [src]="imgUrl">
+        <p class="text-danger">{{imgErr}}</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" [disabled]="addForm.form.invalid">{{action === 'add' ? 'Add' : 'Edit'}} Product</button>
+    </div>
+  </form>
+</div>

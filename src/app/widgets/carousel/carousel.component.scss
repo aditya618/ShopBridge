@@ -1,0 +1,29 @@
+main {
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .main-text {
+    background: #59c173; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #5d26c1,
+      #a17fe0,
+      #59c173
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #5d26c1,
+      #a17fe0,
+      #59c173
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+}
