@@ -1,9 +1,10 @@
 <!-- <div class="spinner spinner-border text-primary"></div> -->
-<div *ngIf="spinner" class="spinner spinner-border text-light"></div>
+<div *ngIf="spinner" class="spinner spinner-border text-dark"></div>
 <app-carousel></app-carousel>
 <div class="container py-4">
   <h3 class="text-center">Products</h3>
   <div class="grey-band">
+    <span class="search-icon"><i class="fa fa-search"></i></span>
     <input class="search" (keyup)="onSearch($event)" placeholder="Search for product name" type="text" >
   </div>
   <div *ngIf="products" class="row mt-4">

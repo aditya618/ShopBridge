@@ -22,4 +22,16 @@
     padding: 10px;
     width: 200px;
   }
+
+  .search-icon {
+    font-size: 23px;
+    margin-right: 6px;
+    color: #a17fe0;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .grey-band {
+    justify-content: center;
+  }
 }

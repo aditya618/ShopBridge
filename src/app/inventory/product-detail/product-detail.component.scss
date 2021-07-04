@@ -11,3 +11,20 @@
   width: 60px;
   height: 60px;
 }
+
+.product-image {
+  width: 80%;
+}
+
+@media screen and (max-width: 990px) {
+  .product-image {
+    width: 100%;
+  }
+  .first-col {
+    order: 2;
+    margin-top: 50px;
+  }
+  .second-col {
+    order: 1;
+  }
+}

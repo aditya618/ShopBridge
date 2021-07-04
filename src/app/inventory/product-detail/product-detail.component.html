@@ -13,15 +13,15 @@
 <div *ngIf="spinner" class="spinner spinner-border text-primary"></div>
 <div class="container mt-5">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <img style="width: 50%;" [src]="product.image" alt="product image">
+    <div class="col-lg-6 col-md-6 col-sm-12 first-col">
+      <img class="product-image" [src]="product.image" alt="product image">
       <h5><i>Price: ${{product.price}}</i></h5>
-      <div class="d-flex justify-content-space-around">
+      <div class="d-flex">
         <button class="btn btn-warning" (click)="onEdit()">Edit</button>
         <button class="btn btn-danger ml-3" (click)="onDelete()">Delete</button>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="col-lg-6 col-md-6 col-sm-12 second-col">
       <h3>{{product.title}}</h3>
       <hr>
       <h4>Description</h4>
